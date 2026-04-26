@@ -6,8 +6,6 @@ It generates a personalized menu based on the user's schedule, budget, and dieta
 ## Live Website
 https://verialix996.github.io/web-course-final-project-expansion/
 
-## Repository
-https://github.com/Verialix996/web-course-final-project-expansion
 
 ## Project Structure
 
