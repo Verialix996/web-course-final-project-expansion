@@ -6,6 +6,8 @@ It generates a personalized menu based on the user's schedule, budget, and dieta
 ## Live Website
 https://verialix996.github.io/web-course-final-project-expansion/
 
+## Repository
+https://github.com/Verialix996/web-course-final-project-expansion
 
 ## Project Structure
 
@@ -36,6 +38,12 @@ Home → CreateMenu → ViewMenu → Recipe
 
 **Scenario 2 – Building a shopping cart:**
 Home → ViewMenu → Recipe → SmartCart
+
+**Scenario 3 – Tracking weekly nutrition:**
+Home (login) → NutritionDashboard → view daily breakdown, progress bars & personalized tips
+
+**Scenario 4 – Completing weekly challenges:**
+Home → WeeklyChallenges → mark challenges as done → see completion banner when all achieved
 
 ## JavaScript Features
 
