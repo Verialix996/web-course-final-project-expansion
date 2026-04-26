@@ -198,28 +198,6 @@ function initTips() {
   }
 }
 
-// ── Render GF meal cards ──────────────────────────────────────────────────
-function renderGFCards() {
-  const container = document.getElementById('gf-grid');
-  NUTRITION_DATA.forEach(d => {
-    ['breakfast', 'lunch', 'dinner'].forEach(m => {
-      const meal = d[m];
-      const badge = meal.glutenFree
-        ? `<span class="gf-badge">✓ ללא גלוטן</span>`
-        : `<span class="gf-badge-no">מכיל גלוטן</span>`;
-      const card = document.createElement('article');
-      card.className = 'gf-card';
-      card.innerHTML = `
-        <p class="gf-day">${d.day}</p>
-        <p class="gf-meal-type">${meal.mealType}</p>
-        <h3>${meal.name}</h3>
-        ${badge}
-        <p class="gf-cal">🔥 ${meal.cal} קק"ל</p>`;
-      container.appendChild(card);
-    });
-  });
-}
-
 // ── Init ──────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const prefs = JSON.parse(localStorage.getItem('menuPrefs') || 'null');
@@ -236,5 +214,4 @@ document.addEventListener('DOMContentLoaded', () => {
   animateBars(avg);
   buildTable();
   initTips();
-  renderGFCards();
 });
