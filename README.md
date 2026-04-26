@@ -4,7 +4,10 @@ SmartBite is a smart weekly meal planning website for gluten-intolerant people.
 It generates a personalized menu based on the user's schedule, budget, and dietary preferences.
 
 ## Live Website
-http://ronsi.mtacloud.co.il/
+https://verialix996.github.io/web-course-final-project-expansion/
+
+## Repository
+https://github.com/Verialix996/web-course-final-project-expansion
 
 ## Project Structure
 
@@ -20,11 +23,13 @@ Includes/           – HTML pages + PHP backend files
 
 | # | File | Description |
 |---|------|-------------|
-| 1 | `Includes/HomePage.html` | Home page – hero section, quick actions, demo menu |
+| 1 | `Includes/HomePage.html` | Home page – hero section, quick actions, returning user login |
 | 2 | `Includes/CreateMenu.html` | Create weekly menu – form with validations, saves to DB |
 | 3 | `Includes/ViewMenu.html` | View weekly menu – 7-day view with load level selector |
 | 4 | `Includes/Recipe.html` | Full recipe detail – ingredients, steps, nutrition |
 | 5 | `Includes/SmartCart.html` | Smart shopping list – categorized, jQuery animated |
+| 6 | `Includes/NutritionDashboard.html` | Nutrition dashboard – weekly averages, progress bars, tips |
+| 7 | `Includes/WeeklyChallenges.html` | Weekly challenges – nutrition & cooking goals with progress |
 
 ## User Scenarios
 
