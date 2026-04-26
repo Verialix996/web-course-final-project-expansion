@@ -1,6 +1,6 @@
 # SmartBite – Final Web Development Project
 
-SmartBite is a smart weekly meal planning website for gluten-intolerant people.
+SmartBite is a smart weekly meal planning website for people with varying schedule.
 It generates a personalized menu based on the user's schedule, budget, and dietary preferences.
 
 ## Live Website
