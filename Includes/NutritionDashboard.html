@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBite – דשבורד תזונה</title>
+    <link rel="stylesheet" href="../CSS/main.css?v=3">
+    <link rel="stylesheet" href="../CSS/NutritionDashboard.css?v=3">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="HomePage.html" class="logo">SmartBite 🍏</a>
+        <span class="header-user" id="headerUser" style="display:none"></span>
+        <nav>
+            <ul>
+                <li><a href="HomePage.html">דף הבית</a></li>
+                <li><a href="CreateMenu.html">יצירת תפריט</a></li>
+                <li><a href="ViewMenu.html">צפייה בתפריט</a></li>
+                <li><a href="SmartCart.html">סל קניות</a></li>
+                <li><a href="NutritionDashboard.html" class="active">דשבורד תזונה</a></li>
+                <li><a href="WeeklyChallenges.html">אתגרי שבוע</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ── No Menu State ─────────────────────────────────────────────── -->
+        <div class="no-menu-state" id="noMenuState">
+            <span class="no-menu-icon">📊</span>
+            <h2>עדיין אין תפריט שבועי</h2>
+            <p>צור תפריט שבועי כדי לראות את נתוני התזונה שלך</p>
+            <a href="CreateMenu.html" class="btn btn-primary">צור תפריט עכשיו →</a>
+        </div>
+
+        <!-- ── Dashboard content (hidden until menu exists) ─────────────── -->
+        <div id="dashContent" style="display:none">
+
+        <!-- ── Hero ─────────────────────────────────────────────────────── -->
+        <section class="dash-hero">
+            <h1>📊 דשבורד תזונה שבועי</h1>
+            <p>סקירה מלאה של ערכי המזון שלך לאורך השבוע – קלוריות, חלבון, פחמימות ושומן</p>
+        </section>
+
+        <!-- ── Stat Cards ────────────────────────────────────────────────── -->
+        <section class="stat-cards">
+            <h2>ממוצע יומי השבוע</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">🔥</span>
+                    <div class="stat-value" id="avg-cal">–</div>
+                    <div class="stat-unit">קק"ל</div>
+                    <div class="stat-label">קלוריות</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">💪</span>
+                    <div class="stat-value" id="avg-protein">–</div>
+                    <div class="stat-unit">גרם</div>
+                    <div class="stat-label">חלבון</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🌾</span>
+                    <div class="stat-value" id="avg-carbs">–</div>
+                    <div class="stat-unit">גרם</div>
+                    <div class="stat-label">פחמימות</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🥑</span>
+                    <div class="stat-value" id="avg-fat">–</div>
+                    <div class="stat-unit">גרם</div>
+                    <div class="stat-label">שומן</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Dashboard Body: progress + table | tips sidebar ───────────── -->
+        <section class="dash-body">
+
+            <!-- Left column -->
+            <div class="left-col">
+
+                <!-- Progress Bars -->
+                <div class="progress-section">
+                    <h3>📈 עמידה ביעדים יומיים מומלצים</h3>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            🔥 קלוריות
+                            <span class="prog-nums"></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar bar-cal" id="bar-cal"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            💪 חלבון
+                            <span class="prog-nums"></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar bar-prot" id="bar-prot"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            🌾 פחמימות
+                            <span class="prog-nums"></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar bar-carbs" id="bar-carbs"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            🥑 שומן
+                            <span class="prog-nums"></span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar bar-fat" id="bar-fat"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Breakdown Table -->
+                <div class="breakdown-section">
+                    <h3>📅 פירוט יומי – לחץ על יום לפרטי הארוחות</h3>
+                    <table class="breakdown-table">
+                        <thead>
+                            <tr>
+                                <th>יום</th>
+                                <th>קלוריות</th>
+                                <th>חלבון</th>
+                                <th>פחמימות</th>
+                                <th>שומן</th>
+                            </tr>
+                        </thead>
+                        <tbody id="day-tbody">
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div><!-- /left-col -->
+
+            <!-- Right column: Tips Sidebar -->
+            <aside class="tips-sidebar">
+                <h3>💡 טיפים תזונתיים</h3>
+                <p style="font-size:0.83rem;color:#888;text-align:center;margin:0 0 1rem">בחר רכיב תזונה לקבלת טיפ אישי</p>
+
+                <div class="nutrient-btns">
+                    <button class="nutrient-btn" data-nutrient="calories">🔥 קלוריות</button>
+                    <button class="nutrient-btn" data-nutrient="protein">💪 חלבון</button>
+                    <button class="nutrient-btn" data-nutrient="carbs">🌾 פחמימות</button>
+                    <button class="nutrient-btn" data-nutrient="fat">🥑 שומן</button>
+                </div>
+
+                <div class="tip-box" id="tip-box">
+                    <!-- Tip text injected by JS -->
+                </div>
+            </aside>
+
+        </section>
+
+        <!-- ── GF Section ────────────────────────────────────────────────── -->
+        <section class="gf-section">
+            <h2>🌾 ארוחות ללא גלוטן בתפריט השבועי</h2>
+            <div class="gf-grid" id="gf-grid">
+                <!-- Cards injected by JS -->
+            </div>
+        </section>
+
+        </div><!-- /dashContent -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SmartBite – פרויקט גמר, פיתוח ווב.</p>
+        <p>
+            <a href="#" data-tooltip="טרם מומש">תנאי שימוש</a> |
+            <a href="#" data-tooltip="טרם מומש">צור קשר</a>
+        </p>
+    </footer>
+
+    <script src="../JS/menuData.js?v=3"></script>
+    <script src="../JS/NutritionDashboard.js?v=3"></script>
+    <script src="../JS/userSession.js?v=3"></script>
+</body>
+</html>
