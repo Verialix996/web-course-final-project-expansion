@@ -1,0 +1,463 @@
+/* ===== Nutrition Dashboard – Page Styles ===== */
+
+/* No-menu empty state */
+.no-menu-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #888;
+    gap: 1rem;
+}
+
+.no-menu-state .no-menu-icon {
+    font-size: 4rem;
+}
+
+.no-menu-state h2 {
+    color: var(--dark);
+    margin: 0;
+}
+
+.no-menu-state p {
+    margin: 0;
+    max-width: 360px;
+}
+
+/* Hero */
+.dash-hero {
+    background: linear-gradient(135deg, var(--dark) 60%, #1a2b3c);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem 2.5rem;
+}
+
+.dash-hero h1 {
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem;
+    color: var(--primary);
+}
+
+.dash-hero p {
+    font-size: 1.05rem;
+    color: #ccc;
+    margin: 0;
+}
+
+/* ===== Stat Cards ===== */
+.stat-cards {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+}
+
+.stat-cards h2 {
+    text-align: center;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.6rem 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.stat-card .stat-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.1;
+}
+
+.stat-card .stat-unit {
+    font-size: 0.85rem;
+    color: #888;
+    margin-right: 2px;
+}
+
+.stat-card .stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* ===== Dashboard Body (2-col) ===== */
+.dash-body {
+    max-width: 1100px;
+    margin: 0 auto 2.5rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+    align-items: start;
+}
+
+/* ===== Progress Section ===== */
+.progress-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.8rem;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.progress-section h3 {
+    margin: 0 0 1.4rem;
+    color: var(--dark);
+    font-size: 1.15rem;
+}
+
+.progress-item {
+    margin-bottom: 1.2rem;
+}
+
+.progress-item:last-child { margin-bottom: 0; }
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.progress-label .prog-nums {
+    font-weight: 400;
+    color: #777;
+    font-size: 0.82rem;
+}
+
+.progress-track {
+    height: 10px;
+    background: #e8e8e8;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 50px;
+    width: 0;
+    transition: width 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar.bar-cal   { background: #e67e22; }
+.progress-bar.bar-prot  { background: #3498db; }
+.progress-bar.bar-carbs { background: #9b59b6; }
+.progress-bar.bar-fat   { background: #e74c3c; }
+
+/* ===== Breakdown Table ===== */
+.breakdown-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+}
+
+.breakdown-section h3 {
+    margin: 0 0 1.2rem;
+    color: var(--dark);
+    font-size: 1.15rem;
+}
+
+.breakdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.breakdown-table thead th {
+    background: var(--dark);
+    color: white;
+    padding: 10px 14px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.breakdown-table thead th:first-child { border-radius: 8px 0 0 8px; }
+.breakdown-table thead th:last-child  { border-radius: 0 8px 8px 0; }
+
+.day-row {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.day-row:hover { background: rgba(46,204,113,0.08); }
+
+.day-row td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #eee;
+    color: var(--text);
+}
+
+.day-row td:first-child {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.day-row .expand-icon {
+    color: var(--primary);
+    font-style: normal;
+    transition: transform 0.3s;
+    display: inline-block;
+}
+
+.day-row.open .expand-icon { transform: rotate(180deg); }
+
+/* Detail row */
+.detail-row td {
+    padding: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-inner {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.38s ease;
+    background: rgba(46,204,113,0.05);
+}
+
+.detail-row.open .detail-inner {
+    max-height: 240px;
+}
+
+.detail-meals {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 14px 16px;
+}
+
+.detail-meal {
+    background: white;
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid var(--card-border);
+    font-size: 0.83rem;
+}
+
+.detail-meal strong {
+    display: block;
+    color: var(--dark);
+    margin-bottom: 4px;
+    font-size: 0.88rem;
+}
+
+.detail-meal .meal-macros {
+    color: #666;
+    line-height: 1.7;
+}
+
+.detail-meal .meal-macros span {
+    display: inline-block;
+    background: var(--card-bg);
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin-bottom: 2px;
+    font-size: 0.78rem;
+}
+
+/* ===== Tips Sidebar ===== */
+.tips-sidebar {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.6rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    position: sticky;
+    top: 80px;
+}
+
+.tips-sidebar h3 {
+    margin: 0 0 1rem;
+    color: var(--dark);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.nutrient-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 1.2rem;
+}
+
+.nutrient-btn {
+    background: white;
+    border: 2px solid var(--card-border);
+    border-radius: 50px;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text);
+    font-family: inherit;
+    text-align: center;
+}
+
+.nutrient-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.nutrient-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.tip-box {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    padding: 1rem 1.1rem;
+    min-height: 110px;
+    transition: opacity 0.25s;
+}
+
+.tip-box .tip-icon {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.tip-box .tip-title {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.tip-box .tip-text {
+    font-size: 0.83rem;
+    color: #555;
+    line-height: 1.55;
+}
+
+.tip-box.fading { opacity: 0; }
+
+/* ===== GF Section ===== */
+.gf-section {
+    background: var(--light);
+    padding: 2.5rem 2rem 3rem;
+}
+
+.gf-section h2 {
+    text-align: center;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+}
+
+.gf-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gf-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.3rem 1.4rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.gf-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+}
+
+.gf-card .gf-day {
+    font-size: 0.78rem;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.gf-card .gf-meal-type {
+    font-size: 0.82rem;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.gf-card h4 {
+    margin: 0 0 0.5rem;
+    color: var(--dark);
+    font-size: 0.97rem;
+}
+
+.gf-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    padding: 2px 10px;
+    font-weight: 600;
+}
+
+.gf-badge-no {
+    display: inline-block;
+    background: #eee;
+    color: #aaa;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    padding: 2px 10px;
+}
+
+.gf-card .gf-cal {
+    font-size: 0.82rem;
+    color: #888;
+    margin-top: 6px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .dash-body  { grid-template-columns: 1fr; }
+    .tips-sidebar { position: static; }
+    .gf-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .gf-grid   { grid-template-columns: 1fr; }
+    .detail-meals { grid-template-columns: 1fr; }
+    .dash-hero h1 { font-size: 1.6rem; }
+    .stat-cards, .dash-body { padding: 0 1rem; }
+}

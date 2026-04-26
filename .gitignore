@@ -1,0 +1,25 @@
+# Submission & documentation files
+*.pdf
+תיאור מסכים.txt
+
+# Screenshot / image files in root
+*.png
+*.jpg
+*.jpeg
+
+# Error screenshots folder
+errors/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# PHP environment / secrets
+Includes/db.php
